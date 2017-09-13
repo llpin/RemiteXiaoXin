@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+<meta name="author" content="谢单单" />
+<meta name="date" content="2017年7月" />
+<title>荃润</title>
+<script type="text/javascript">
+ (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+<meta name="apple-mobile-web-app-capable" content="yes">  
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no, email=no">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="stylesheet" href="css/swiper.min.css" />
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/style.css" />
+
+
+</head>
+<body>
+
+<div id="loading">
+  <div class="loadEffect">
+      <div><span></span></div>
+      <div><span></span></div>
+      <div><span></span></div>
+      <div><span></span></div>
+    </div>
+</div>
+
+
+<!-- <img src="images/home_bg.jpg" alt="" class="bg"> -->
+
+<!-- p1 -->
+<div class="page1">
+<div class="w90 banner">
+  <div class="swiper-container homeBanner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/banner1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/banner2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/banner3.jpg" alt=""></div>
+        </div>
+        
+    </div>
+
+    <div class="swiper-pagination homePagination"></div>   
+</div>
+
+<img src="images/home_Fixed.gif" alt="" class="w90 fixation">
+
+<div class="w90 home_button">
+    <ul id="p1Button">
+      <li data-in="1"><img src="images/button-xiaobai.png" alt=""></li>
+      <li data-in="2"><img src="images/button-xiaoka.png" alt=""></li>
+      <li data-in="3"><img src="images/button-dashi.png" alt=""></li>
+      <li data-in="4"><img src="images/button-zhuanti.png" alt=""></li>
+    </ul>
+</div>
+
+<img src="images/login.jpg" alt="" class="login_button">
+</div>
+<!-- p1结束 -->
+
+<!-- 登陆查看详情 -->
+<div class="popup_login_details page6">
+   <img src="images/login_details.png" alt="">
+</div>
+
+<!-- 单独输入邀请码 -->
+<div class="page7">
+   <div class="page7_box">
+     <img src="images/one_code.png" alt="">
+     <input type="text" id="oneCode" placeholder="请输入邀请码">
+     <br>
+     <div class="oneSubmit"></div>
+   </div>
+   
+</div>
+
+
+<div id="msg"></div>
+<script src="js/jquery.min.1.9.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+<script src="http://test.i-h5.cn/common/share.php?type=js"></script>
+<script src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/all.js?11"></script>
+<script>
+  var swiperBanner = new Swiper('.homeBanner',{
+      pagination: '.homePagination',
+       spaceBetween: 30,
+       paginationClickable: true,
+       autoplay:3000
+
+  });
+
+  
+</script>
+
+<div style="display: none;">
+    <script src="https://s13.cnzz.com/z_stat.php?id=1263094619&web_id=1263094619" language="JavaScript"></script>
+</div>
+<!-- <script src='http://game.i-h5.cn/egret/common/vconsole.min.js'></script> -->
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+<meta name="author" content="谢单单" />
+<meta name="date" content="2017年7月" />
+<title>课题介绍</title>
+<script type="text/javascript">
+ (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+<link rel="stylesheet" href="css/animate.min.css">
+  
+<link rel="stylesheet" href="css/style.css" />
+<meta name="apple-mobile-web-app-capable" content="yes">  
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no, email=no">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<body>
+
+<div class="page10 task">
+    
+    <div class="catalog_box">
+
+        <div class="catalog_li">
+            <img src="" alt="" id="taskBanner">
+
+            <h1 id="taskH1"></h1>
+
+            <div class="task_introduce">
+                
+            </div>
+            <div class="task_line"></div>
+
+            <div class="task_icon">
+                <i id="likeNum"></i>
+                <b id="likeRightTips">+1</b>
+                <img src="images/task_like.png" alt="" id="shareLike" >
+                <img src="images/task_weixin.png" alt="" id="shareWeixin">
+                <img src="images/task_weibo.png" alt="" id="shareWeibo">
+                <a href="index.html"><img src="images/task_home.png" alt="">
+                </a>
+            </div>
+            
+        </div>
+
+        <div class="catalog_li task_submit" id="taskSubmitUrl">
+            <!-- <a href="" id="taskSubmitUrl"> -->
+                <div class="task_starts">
+                    <img src="images/task_ok.png" alt="" class="task_icon_left">
+                    开始做题
+                    <img src="images/task_more.png" alt="" class="task_icon_right">
+
+                </div>
+            <!-- </a> -->
+        </div>
+
+       
+      
+
+    </div>
+
+</div>
+
+<div class="weixin_tips_box">
+    <img src="images/share.png" alt="">
+</div>
+
+<div class="popup_qr share_popup_qr">
+   <div class="poput_bg"></div>
+   <img src="images/weixinlook.png" alt="">
+</div>
+
+<div id="msg"></div>
+<script src="js/jquery.min.1.9.js"></script>
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+<script src="http://game.i-h5.cn/common/share.php?type=js"></script>
+<script src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+<div style="display: none;">
+    <script src="https://s13.cnzz.com/z_stat.php?id=1263094619&web_id=1263094619" language="JavaScript"></script>
+</div>
+
+<!-- <script src='http://game.i-h5.cn/egret/common/vconsole.min.js'></script> -->
+</body>
+</html>

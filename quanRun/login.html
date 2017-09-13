@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+<meta name="author" content="谢单单" />
+<meta name="date" content="2017年7月" />
+<title>登陆</title>
+<script type="text/javascript">
+ (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <meta name="apple-mobile-web-app-capable" content="yes">  
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no, email=no">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="css/style.css" />
+
+
+</head>
+<body>
+
+
+<!-- 修改密码 -->
+<div class="page10 change_password">
+    <div class="avatar_box">
+        <!-- <img src="images/share.jpg" alt="" class="avatar_pic"> -->
+    </div>
+   <div class="box_dark">
+      <div class="box_light">
+          <h2>登 陆</h2>
+
+          <div class="input_box">
+              <strong>手机号码：</strong>
+              <div class="input_bg">
+                 <input type="text" placeholder="请输入手机号码" id="loginPhone">
+              </div>
+          </div>
+
+          <div class="input_box">
+              <strong>密 码：</strong>
+              <div class="input_bg">
+                 <input type="password" placeholder="请输入密码" id="loginPassWord">
+              </div>
+          </div>
+
+
+
+          <img src="images/submint.png" alt="" id="loginSubmit" class="submit_form_button">
+
+
+          <div id="loginWeixinReg" ><p>微信注册</p></div>
+
+
+
+      </div>
+   </div>
+
+
+
+  <a href="user_info.html">
+    <div class="back_box">    
+      <img src="images/back_button.png" alt="" class="back_button">
+    </div>
+  </a>
+  
+
+
+</div>
+
+
+<div class="popup_qr">
+   <div class="poput_bg"></div>
+   <img src="images/pcweixinreg.png" alt="">
+</div>
+
+
+<div id="msg"></div>
+<script src="js/jquery.min.1.9.js"></script>
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+<script src="http://game.i-h5.cn/common/share.php?type=js"></script>
+<script src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+<div style="display: none;">
+    <script src="https://s13.cnzz.com/z_stat.php?id=1263094619&web_id=1263094619" language="JavaScript"></script>
+</div>
+<!-- <script src='http://game.i-h5.cn/egret/common/vconsole.min.js'></script> -->
+</body>
+</html>

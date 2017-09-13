@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+<title>个人信息</title>
+<meta name="author" content="谢单单" />
+<meta name="date" content="2017年7月" />
+<script type="text/javascript">
+ (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+<link rel="stylesheet" href="css/style.css" />
+<meta name="apple-mobile-web-app-capable" content="yes">  
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no, email=no">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<body>
+
+<div class="page10 user_info">
+    <div class="avatar_box">
+        <img src="" alt="" class="avatar_pic">
+    </div>
+   <div class="box_dark">
+      <div class="box_light">
+          <h2 id="userInfoTitle">个人中心</h2>
+
+          <div class="info_li"><strong>真实姓名：</strong><i id="infoName"></i></div>
+          <div class="info_li"><strong>昵称：</strong><i id="infoNickName"></i></div>        
+          <div class="info_li"><strong>手机：</strong><i  id="infoPhone"></i></div>
+          <div class="info_li"><strong>公司：</strong><i id="infoLtd"></i></div>
+          <div class="info_li"><strong>部门：</strong><i id="infoPost"></i></div>
+      </div>
+   </div>
+
+    <div class="button_group">
+        <a href="change_password.html">
+           <div class="button_box button_change_pswd">
+              <span>修改密码</span>
+           </div>
+        </a>
+        
+        <a href="change_info.html">
+           <div class="button_box button_change_finfo">
+              <span>完善资料</span>
+           </div>
+         </a>
+        <a href="my_grade.html">
+           <div class="button_box  button_view_grade">
+              <span>查看成绩</span>
+           </div> 
+        </a>        
+      
+    </div>
+
+  <a href="index.html">
+    <div class="back_box">    
+      <img src="images/back_button.png" alt="" class="back_button">
+    </div>
+  </a>
+  
+
+
+</div>
+
+
+<div id="msg"></div>
+<script src="js/jquery.min.1.9.js"></script>
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+<script src="http://game.i-h5.cn/common/share.php?type=js"></script>
+<script src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript">
+  
+$(function(){
+
+  function isWeixin() {
+    var a = navigator.userAgent.toLowerCase();
+    return "micromessenger" == a.match(/MicroMessenger/i) ? !0 : !1
+}
+
+if(isWeixin()){
+      $.ajax({
+        url:"http://xiaoxin.hzquanrun.com/quanRun/api.php?a=data",
+        type:"post",
+        dataType:"json",
+        success:function(data){
+          var Data = data.data.info;
+            if(!Data.phone)  {
+
+                if(window.confirm('您尚未绑定手机号，请完善您的个人信息')){
+                
+                    window.location.href="change_info.html";
+                     return true;
+                  }else{
+                     return false;
+                 }
+
+              // alert("您尚未绑定手机号，请完善您的个人信息");
+              
+
+            }
+        }
+      });
+
+}
+
+// else{
+//    function getCookie(objName){
+//       var arrStr = document.cookie.split("; "); 
+//       for(var i = 0;i < arrStr.length;i ++){ 
+//       var temp = arrStr[i].split("="); 
+//       if(temp[0] == objName) return unescape(temp[1]); 
+//       } 
+//     } 
+//   var cookiePhone = getCookie("cookiePhone");
+//       $.ajax({
+//       url:"http://test.i-h5.cn/xl_game/quanRun/api2.php?a=data",
+//       type:"post",
+//       dataType:"json",
+//       data:{phone:cookiePhone},
+//       success:function(data){
+//         var DaTa = data.data.info;
+//         console.log(DaTa.phone);
+//           if(!DaTa.phone)  {
+//             alert("您尚未绑定手机号，请完善您的个人信息");
+//             window.location.href="change_info.html";
+//           }
+//       }
+//     });
+// }
+
+
+
+  });
+</script>
+<div style="display: none;">
+    <script src="https://s13.cnzz.com/z_stat.php?id=1263094619&web_id=1263094619" language="JavaScript"></script>
+</div>
+<!-- <script src='http://game.i-h5.cn/egret/common/vconsole.min.js'></script> -->
+</body>
+</html>
